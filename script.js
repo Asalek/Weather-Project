@@ -13,10 +13,13 @@ app.get("/", function(req, res){
 		//console.log(response);
 		response.on("data", function(data){
 			const wData = JSON.parse(data); // # JSON.stringify(data) => from json to string
+			const wstatus = wData.weather[0].description;
 			console.log(wData.weather[0].main);
+			res.write("<h1> weather status in casablanca is : " + wstatus +"</h1>");
+			res.send();
 		});
 	})
-	res.sendFile(__dirname + "/index.html");
+	// res.sendFile(__dirname + "/index.html");
 });
 
 
