@@ -33,7 +33,7 @@ app.post("/", function(req, res){
 				console.log(wData.weather[0]);
 				res.write("<h1> weather status in "+city+" is : " + wstatus +"</h1>");
 				res.write("<p> means it's now "+wData.weather[0].main +"</p>");
-				res.write("<p> means it's now "+wData.main.temp +" celsuis</p>");
+				res.write("<p> The Temperature now is "+wData.main.temp +" celsuis</p>");
 				res.write("<img src=" + urlIcon + ">");
 				res.send();
 			}
